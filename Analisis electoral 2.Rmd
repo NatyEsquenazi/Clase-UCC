@@ -1,0 +1,51 @@
+---
+title: "Analisis legislativo"
+subtitle: "⚔<br/>with xaringan"
+author: "Lic Natalia Esquenazi"
+institute: "Universidad Catolica de Cordoba"
+date: "2016/12/12 (updated: `r Sys.Date()`)"
+encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    css: ["rladies", "rladies-fonts", "custom.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+Teoria de la Public Choice y votante mediano
+
+---
+
+```{r message=FALSE, warning=FALSE, paged.print=TRUE}
+knitr::include_graphics("libs/descarga.png")
+```
+
+
+```{r}
+xaringan::summon_remark()
+```
+
+---
+
+oi tudo bem 
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
