@@ -1,0 +1,90 @@
+---
+title: "Análisis legislativo"
+subtitle: "Universidad Catolica de Cordoba"
+author: "<img src = 'https://d33wubrfki0l68.cloudfront.net/9b0699f18268059bdd2e5c21538a29eade7cbd2b/67e5c/img/logo/cursor1-5.png' width = '30%'>"
+date: "`r paste(lubridate::month(Sys.Date(), label = TRUE, abbr = FALSE, locale = 'pt_BR.UTF-8'), 'de', lubridate::year(Sys.Date()))`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "default-fonts", "css/custom-intro.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "4:3"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r bases 1, warning=FALSE, include=FALSE}
+library(polAr)
+library(tidyverse)
+library(dplyr)
+```
+
+## Discurso legislativo
+
+En la apertura de sesiones 
+
+```{r  bases 2 , warning=FALSE, include=True}
+#Vemos los discursos disponibles
+show_available_speech(viewer = T)
+
+#Vamos a pedir el discurso legislativo de MM en formato Tidy 
+mm <- get_speech(year=2018, raw = F) 
+#%>% pull(discurso)
+
+#Visualizamos 
+plot_speech(mm)
+```
+
+```{r  bases 2 , warning=FALSE, include=True}
+#Vemos los discursos disponibles
+show_available_bills(viewer = T)
+
+#Descargamos el que queremos analizar
+get_bill_votes(bill= "3805-Diputados")
+
+#Visualizamos 
+plot_bill(id="3805-Diputados")
+```
+
+```{r bases  , warning=FALSE, include=True}
+#Descargamos el que queremos analizar
+get_bill_votes(bill= "361-Senado")
+#Visualizamos 
+plot_bill(id="361-Senado")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

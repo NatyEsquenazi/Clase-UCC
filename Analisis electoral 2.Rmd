@@ -1,38 +1,85 @@
 ---
-title: "Analisis legislativo"
+title: "bia é muito legal"
 subtitle: "⚔<br/>with xaringan"
-author: "Lic Natalia Esquenazi"
-institute: "Universidad Catolica de Cordoba"
+author: "Yihui Xie"
+institute: "RStudio, PBC"
 date: "2016/12/12 (updated: `r Sys.Date()`)"
 encoding: "UTF-8"
 output:
   xaringan::moon_reader:
     lib_dir: libs
     chakra: libs/remark-latest.min.js
-    css: ["rladies", "rladies-fonts", "custom.css"]
+    css: ["kunoichi", "ninjutsu", "custom.css"]
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
 ---
 
+Hoja de Ruta
 
-Teoria de la Public Choice y votante mediano
+1. Teoria de la Public Choice y votante mediano
 
----
+2. Analisis legislativo
 
-```{r message=FALSE, warning=FALSE, paged.print=TRUE}
-knitr::include_graphics("libs/descarga.png")
-```
-
-
-```{r}
-xaringan::summon_remark()
-```
+3. Conclusiones 
 
 ---
 
-oi tudo bem 
+Paquete PolAR: analisis politico argentino con R 
+
+```{r bases0, echo=FALSE, fig.align='center', out.width="50%"}
+knitr::include_graphics("libs/63932865.png")
+```
+
+Autor: Juan Pablo Ruiz Nicolini
+---
+
+Reglas de decision: 
+
+- Unanimidad
+- Regla de mayoria por primera preferencia
+- Regla de mayoria con votacion round robin
+- Regla de mayoria con fijacion de agenda 
+
+Teorema de May: 
+
+"El unico metodo que satisface las condiciones de anonimidad, neutralidad y monotonicidad para determinar un ganador de una elección entre dos alternativas es la regla de la mayoría"
+
+Ganador de condorcet: 
+
+"Un ganador de Condorcet es una alternativa tal que recibe la mayoría de los votos cuando es apareada contra cada una de las otras alternativas" 
+---
+
+Teorema de Pico Unico: 
+
+"aún si los miembros del grupo tienen ideas muy diferentes sobre lo que el grupo
+debería hacer, la regla de la mayoría funciona a la perfección siempre y cuando haya un grado mínimo de consenso (mediante una curva de pico único)
+
+5. Teorema del votante mediano: supuestos y limitaciones 
+
+---
+```{r bases 1, echo=FALSE}
+library(polAr)
+```
+---
+Discurso de apertura de sesiones
+
+```{r bases 2, echo=True}
+show_available_speech(viewer = T)
+mm <- get_speech(year=2018, raw = F) 
+plot_speech(mm)
+```
+---
+```{r  bases 3 , echo=True}
+#Vemos los discursos disponibles
+show_available_bills(viewer = T)
+
+#Descargamos el que queremos analizar
+get_bill_votes(bill= "3805-Diputados")
+plot_bill(id="3805-Diputados")
+
+```
 
 ---
 
